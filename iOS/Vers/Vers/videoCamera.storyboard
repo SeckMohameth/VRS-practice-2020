@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Simple Video Cam Controller-->
+        <scene sceneID="XIM-FF-Gjh">
+            <objects>
+                <viewController storyboardIdentifier="videoCamera" id="Am8-o9-XJY" customClass="SimpleVideoCamController" customModule="SimpleVideoCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xBG-S3-NIF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATw-iM-Tvi">
+                                <rect key="frame" x="177" y="756" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="9Zd-90-aVh"/>
+                                    <constraint firstAttribute="height" constant="60" id="vrH-c4-ru9"/>
+                                </constraints>
+                                <state key="normal" image="VideoCam"/>
+                                <connections>
+                                    <action selector="captureWithSender:" destination="Am8-o9-XJY" eventType="touchUpInside" id="ib3-HU-MeM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ATw-iM-Tvi" firstAttribute="centerX" secondItem="ph3-ib-5MP" secondAttribute="centerX" id="dJQ-kQ-4pz"/>
+                            <constraint firstItem="ph3-ib-5MP" firstAttribute="bottom" secondItem="ATw-iM-Tvi" secondAttribute="bottom" constant="46" id="nsU-Cb-qkV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ph3-ib-5MP"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="ATw-iM-Tvi" id="2kY-Kl-gh6"/>
+                        <segue destination="ntR-4k-E0N" kind="presentation" identifier="playVideo" id="b1y-n7-kGk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YlM-Dm-urd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="133"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="aft-in-tEG">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="ntR-4k-E0N" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSn-ne-GgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="VideoCam" width="114" height="114"/>
+    </resources>
+</document>
