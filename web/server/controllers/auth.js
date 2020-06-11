@@ -38,7 +38,7 @@ exports.register = (req, res) => {
             .then(data => {
                 console.log('email submitted to SES', data);
                 res.json({
-                    message: `Email has been sent to ${email}, Follow the instructions to complete your registration`
+                    message: `Email has been sent to ${email}, Follow the instructions to complete your registration. You might have to check your spam folder.`
                 });
             })
             .catch(error => {
